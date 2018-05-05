@@ -1,0 +1,15 @@
+{
+  "templateVersion": 1,
+  "serviceName": "dataship",
+  "rootServicePath": "dataship",
+  "paths": {
+    "dataship.play.secret": {},
+    "dataship.secure.logging.encryptkey": {},
+    "dataship.secure.logging.initvector": {},
+    "dataship.optum.oauth.client.id": {},
+    "dataship.optum.oauth.client.secret": {},
+    "dataship.encrypt.key.service": {},
+    "dataship.secure.logging.initvector": {},
+    "dataship.postgres.db.password": {}
+  }
+}

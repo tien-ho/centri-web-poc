@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: com.rallyhealth.core:lib-illuminati-play25-v9_2.11:9.2.3:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.rallyhealth.core/lib-illuminati-play25-v9_2.11/jars/lib-illuminati-play25-v9_2.11-9.2.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.rallyhealth.core/lib-illuminati-play25-v9_2.11/srcs/lib-illuminati-play25-v9_2.11-9.2.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

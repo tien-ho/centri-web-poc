@@ -1,0 +1,28 @@
+{
+  "type": "record",
+  "name": "EncryptedMessage",
+  "namespace": "com.optum.exts.common.model",
+  "doc": "An encrypted Avro object's encrypted value",
+  "fields": [
+    {
+      "name": "cekFingerprint",
+      "type": "string",
+      "doc": "sha256 digest of the cek"
+    },
+    {
+      "name": "encryptedCek",
+      "type": "bytes",
+      "doc": "Rsa encrypted content encryption key"
+    },
+    {
+      "name": "civ",
+      "type": "bytes",
+      "doc": "Content initialization vector"
+    },
+    {
+      "name": "encryptedContent",
+      "type": "bytes",
+      "doc": "The encrypted Avro value"
+    }
+  ]
+}

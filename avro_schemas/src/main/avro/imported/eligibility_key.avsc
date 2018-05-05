@@ -1,0 +1,12 @@
+{
+  "type": "record",
+  "name": "RallyEligibilityKey",
+  "namespace": "com.optum.exts.rally.eligibility.model",
+  "fields": [
+    {
+      "name": "individualIdentifier",
+      "type": "string",
+      "doc": "The unique key for an Individual from a specific source (e.g. PART_NBR + CNSM_ID + SRC_CD + LGCY_SRC_ID)"
+    }
+  ]
+}

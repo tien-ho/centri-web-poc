@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.rallyhealth.centri"
+		module="centri_2.11"
+		revision="1.0.0-1-73a8fe0-dirty-SNAPSHOT"
+		conf="universal-src"
+		confs="universal, universal-docs, universal-src, compile, runtime, test, provided, optional, windows, docker, linux, aspectj-runner, rpm, debian, it, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, scoveragePlugin"
+		date="20180504183803"/>
+	<dependencies>
+	</dependencies>
+</ivy-report>

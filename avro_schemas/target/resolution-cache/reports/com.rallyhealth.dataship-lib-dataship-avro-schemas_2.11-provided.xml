@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.rallyhealth.dataship"
+		module="lib-dataship-avro-schemas_2.11"
+		revision="1.2.2-3-3e28f01-dirty-SNAPSHOT"
+		conf="provided"
+		confs="compile, runtime, test, provided, optional, aspectj-runner, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, scoveragePlugin"
+		date="20180503163718"/>
+	<dependencies>
+	</dependencies>
+</ivy-report>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: com.rallyhealth.optum:lib-optum-mempe-play25-v8_2.11:8.0.0:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.rallyhealth.optum/lib-optum-mempe-play25-v8_2.11/jars/lib-optum-mempe-play25-v8_2.11-8.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/local/com.rallyhealth.optum/lib-optum-mempe-play25-v8_2.11/8.0.0/srcs/lib-optum-mempe-play25-v8_2.11-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

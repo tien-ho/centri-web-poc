@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: com.rallyhealth.core:lib-spartan_2.11:1.19.0:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.rallyhealth.core/lib-spartan_2.11/jars/lib-spartan_2.11-1.19.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.rallyhealth.core/lib-spartan_2.11/srcs/lib-spartan_2.11-1.19.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

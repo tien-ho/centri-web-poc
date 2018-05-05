@@ -1,0 +1,696 @@
+{
+  "namespace": "com.optum.exts.eligibility.rally.model",
+  "name": "RallyEligibility",
+  "type": "record",
+  "fields": [
+    {
+      "name": "individualIdentifier",
+      "type": "string",
+      "doc": "The unique key for an Individual from a specific source (e.g. PART_NBR + CNSM_ID + SRC_CD + LGCY_SRC_ID)"
+    },
+    {
+      "name": "partitionNumber",
+      "type": "string",
+      "doc": "from CDB cs.partnNbr"
+    },
+    {
+      "name": "consumerId",
+      "type": "string",
+      "doc": "from CDB cs.cnsmId"
+    },
+    {
+      "name": "sourceCode",
+      "type": "string",
+      "doc": "from CDB cs.srcCd"
+    },
+    {
+      "name": "legacySourceId",
+      "type": "string",
+      "doc": "from CDB cs.lgcySrcId"
+    },
+    {
+      "name": "xrefId",
+      "type": "string",
+      "doc": "from CDB cs.srcCdbXrefId"
+    },
+    {
+      "name": "xrefIdPartitionNumber",
+      "type": "string",
+      "doc": "from CDB cs.xrefIdPartnNbr"
+    },
+    {
+      "name": "personId",
+      "type": {
+        "type": "array",
+        "items": "long"
+      },
+      "doc": "from CIS (more than one is the exception)"
+    },
+    {
+      "name": "surrogateKey",
+      "type": [
+        "string",
+        "null"
+      ],
+      "doc": "from iMDM",
+      "default": null
+    },
+    {
+      "name": "mdmEid",
+      "type": [
+        "string",
+        "null"
+      ],
+      "doc": "from iMDM",
+      "default": null
+    },
+    {
+      "name": "demographics",
+      "type": {
+        "namespace": "com.optum.exts.eligibility.rally.model",
+        "name": "Demographics",
+        "type": "record",
+        "fields": [
+          {
+            "name": "familyID",
+            "type": "string",
+            "doc": "from CDB cs.famId"
+          },
+          {
+            "name": "policyNumber",
+            "type": "string",
+            "doc": "from CDB cs.lgcyPolNbr"
+          },
+          {
+            "name": "personName",
+            "type": {
+              "namespace": "com.optum.exts.eligibility.rally.model",
+              "name": "PersonName",
+              "type": "record",
+              "fields": [
+                {
+                  "name": "firstName",
+                  "type": "string",
+                  "doc": "from CDB cs.fstNm / car.repFstNm"
+                },
+                {
+                  "name": "middleName",
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "doc": "from CDB cs.midlNm",
+                  "default": null
+                },
+                {
+                  "name": "lastName",
+                  "type": "string",
+                  "doc": "from CDB cs.lstNm / car.repLstNm"
+                }
+              ]
+            }
+          },
+          {
+            "name": "gender",
+            "type": "string",
+            "doc": "from CDB cs.gdrTyp"
+          },
+          {
+            "name": "dateOfBirth",
+            "type": "string",
+            "doc": "from CDB cs.bthDt"
+          },
+          {
+            "name": "cdbRelationshipCode",
+            "type": "string",
+            "doc": "from CDB cs.sbscrRelTypCd"
+          },
+          {
+            "name": "cdbRelationshipDescription",
+            "type": "string",
+            "doc": "from CDB cs.sbscrRelTypTxt"
+          },
+          {
+            "name": "dependentSequenceNumber",
+            "type": "string",
+            "doc": "from CDB cs.depnCd"
+          },
+          {
+            "name": "individualRelationshipCode",
+            "type": "string",
+            "doc": "from CDB cs.topsRelCd"
+          },
+          {
+            "name": "subscriberEmploymentStartDate",
+            "type": "string",
+            "doc": "from CDB cs.eeStrtDt"
+          },
+          {
+            "name": "employeeStatus",
+            "type": "string",
+            "doc": "from CDB cs.eeStsTypCd"
+          },
+          {
+            "name": "permanentAddress",
+            "type": {
+              "type": "record",
+              "name": "Location",
+              "fields": [
+                {
+                  "name": "postalAddress",
+                  "type": {
+                    "namespace": "com.optum.exts.eligibility.rally.model",
+                    "name": "PostalAddress",
+                    "type": "record",
+                    "fields": [
+                      {
+                        "name": "street1",
+                        "type": "string",
+                        "doc": "from CDB ca.strAdrLn1Txt / car.repStrAdrLn1Txt"
+                      },
+                      {
+                        "name": "street2",
+                        "type": "string",
+                        "doc": "from CDB ca.strAdrLn2Txt / car.repStrAdrLn2Txt"
+                      },
+                      {
+                        "name": "city",
+                        "type": "string",
+                        "doc": "from CDB ca.ctyNm / car.repCtyNm"
+                      },
+                      {
+                        "name": "zip",
+                        "type": "string",
+                        "doc": "from CDB ca.pstCd / car.repPstCd"
+                      },
+                      {
+                        "name": "zip4",
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "doc": "from CDB car.repPstExtCd",
+                        "default": null
+                      },
+                      {
+                        "name": "stateCode",
+                        "type": "string",
+                        "doc": "from CDB ca.stCd / car.repStCd"
+                      },
+                      {
+                        "name": "countryCode",
+                        "type": "string",
+                        "doc": "from CDB ca.cntryCd / car.repCntryCd"
+                      },
+                      {
+                        "name": "countrySubCode",
+                        "type": "string",
+                        "doc": "from CDB car.repCntrySubdivCd"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "primaryPhoneNumber",
+            "type": [
+              "string",
+              "null"
+            ],
+            "doc": "from CDB ct.telNbrPrimary",
+            "default": null
+          },
+          {
+            "name": "alternativePhoneNumber",
+            "type": [
+              "string",
+              "null"
+            ],
+            "doc": "from CDB ct.telNbrAlternate",
+            "default": null
+          },
+          {
+            "name": "altId",
+            "type": "string",
+            "doc": "from CDB cs.lgcyAltMbrId"
+          },
+          {
+            "name": "subscriberId",
+            "type": "string",
+            "doc": "from CDB cs.lgcySbscrId"
+          },
+          {
+            "name": "socialSecurityNumber",
+            "type": "string",
+            "doc": "from CDB cs.socSecNbr"
+          },
+          {
+            "name": "employeeId",
+            "type": [
+              "string",
+              "null"
+            ],
+            "doc": "from CDB cx.unfmtAltCnsmId",
+            "default": null
+          },
+          {
+            "name": "emailAddress",
+            "type": "string",
+            "doc": "from CDB cea.elctrAdrTxt"
+          },
+          {
+            "name": "cesCustomerNumber",
+            "type": "string",
+            "doc": "from CDB cs.lgcySrcCustId"
+          },
+          {
+            "name": "cesCustomerName",
+            "type": "string",
+            "doc": "from CDB cs.custNm"
+          },
+          {
+            "name": "subscriberName",
+            "type": "com.optum.exts.eligibility.rally.model.PersonName"
+          },
+          {
+            "name": "subscriberSSN",
+            "type": "string",
+            "doc": "from CDB cs.socSecNbrSub"
+          },
+          {
+            "name": "maritalStatus",
+            "type": "string",
+            "doc": "from CDB cs.mrtlStsTypCdSub"
+          },
+          {
+            "name": "authoritativeRepresentative",
+            "type": {
+              "type": "array",
+              "items": {
+                "name": "AuthoritativeRepresentative",
+                "type": "record",
+                "fields": [
+                  {
+                    "name": "personName",
+                    "type": "com.optum.exts.eligibility.rally.model.PersonName"
+                  },
+                  {
+                    "name": "postalAddress",
+                    "type": "com.optum.exts.eligibility.rally.model.PostalAddress"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "securityLevelCode",
+            "type": "string",
+            "doc": "from CDB cs.secLvlCd"
+          }
+        ]
+      },
+      "doc": "Demographics"
+    },
+    {
+      "name": "healthCoverage",
+      "type": {
+        "type": "array",
+        "items": {
+          "namespace": "com.optum.exts.eligibility.rally.model",
+          "name": "HealthCoverage",
+          "type": "record",
+          "fields": [
+            {
+              "name": "legalEntity1",
+              "type": "string",
+              "doc": "from CDB cpd.cnsmLglEntyNm*"
+            },
+            {
+              "name": "policyNumber",
+              "type": "string",
+              "doc": "from CDB cpd.lgcyPolNbr"
+            },
+            {
+              "name": "coverageLevelTypeCode",
+              "type": "string",
+              "doc": "from CDB cpd.covLvlTypCd"
+            },
+            {
+              "name": "coverageType",
+              "type": "string",
+              "doc": "from CDB cpd.covTypCd"
+            },
+            {
+              "name": "effectiveDate",
+              "type": "string",
+              "doc": "from CDB cpd.covEffDt"
+            },
+            {
+              "name": "cancelDate",
+              "type": "string",
+              "doc": "from CDB cpd.covCancDt"
+            },
+            {
+              "name": "planVariationCode",
+              "type": "string",
+              "doc": "from CDB cpd.lgcyPlnVarCd"
+            },
+            {
+              "name": "reportCode",
+              "type": "string",
+              "doc": "from CDB cpd.lgcyRptCd"
+            },
+            {
+              "name": "productServiceCode",
+              "type": "string",
+              "doc": "from CDB cpd.prdtSrvcTypCd"
+            },
+            {
+              "name": "eligibilityStatusCode",
+              "type": "string",
+              "doc": "from CDB cpd.eeStsTypCd"
+            },
+            {
+              "name": "marketSite",
+              "type": "string",
+              "doc": "from CDB cpd.mktSiteCd"
+            },
+            {
+              "name": "stateOfIssue",
+              "type": "string",
+              "doc": "from CDB cpd.stateOfIssueCd"
+            },
+            {
+              "name": "legacyBenefitID",
+              "type": "string",
+              "doc": "from CDB cpd.lgcyBenPlnId*"
+            },
+            {
+              "name": "migratedLegacySourceId",
+              "type": [
+                "string",
+                "null"
+              ],
+              "doc": "from CDB msx.mgrtLgcySrcId",
+              "default": null
+            },
+            {
+              "name": "migratedLegacyPolicyNumber",
+              "type": [
+                "string",
+                "null"
+              ],
+              "doc": "from CDB msx.mgrtLgcyPolNbr",
+              "default": null
+            },
+            {
+              "name": "individualGroupTypeCode",
+              "type": "string",
+              "doc": "from CDB cpd.indvGrpTypCd"
+            },
+            {
+              "name": "packagePlanBenefitCode",
+              "type": "string",
+              "doc": "from CDB cpd.pbpCd"
+            },
+            {
+              "name": "hContractId",
+              "type": "string",
+              "doc": "from CDB cpd.hCntrctId"
+            }
+          ]
+        }
+      },
+      "doc": "Health Coverages"
+    },
+    {
+      "name": "healthServices",
+      "type": {
+        "type": "array",
+        "items":   {
+          "namespace": "com.optum.exts.eligibility.rally.model",
+          "name": "HealthService",
+          "type": "record",
+          "fields": [
+            {
+              "name": "policyNumber",
+              "type": "string",
+              "doc": "from CDB hsd.lgcyPolNbr"
+            },
+            {
+              "name": "healthServiceProductCode",
+              "type": "string",
+              "doc": "from CDB hsd.hltSrvPrdtCd"
+            },
+            {
+              "name": "healthServiceProductLine",
+              "type": "string",
+              "doc": "from CDB hsd.hltSrvPrdtLnCd"
+            },
+            {
+              "name": "cancelDate",
+              "type": "string",
+              "doc": "from CDB hsd.hltSrvCancDt"
+            },
+            {
+              "name": "effectiveDate",
+              "type": "string",
+              "doc": "from CDB hsd.hltSrvEffDt"
+            },
+            {
+              "name": "eligibilityStatusCode",
+              "type": "string",
+              "doc": "from CDB hsd.eeStsTypCd"
+            }
+          ]
+        }
+      },
+      "doc": "Health Services"
+    },
+    {
+      "name": "financialAccounts",
+      "type": {
+        "type": "array",
+        "items":   {
+          "namespace": "com.optum.exts.eligibility.rally.model",
+          "name": "FinancialAccount",
+          "type": "record",
+          "fields": [
+            {
+              "name": "financialAccountId",
+              "type": "string",
+              "doc": "from CDB fa.fincAcctId"
+            },
+            {
+              "name": "financialAccountTypeCode",
+              "type": "string",
+              "doc": "from CDB fa.fincAcctTypCd"
+            },
+            {
+              "name": "effectiveDate",
+              "type": "string",
+              "doc": "from CDB fa.fincAcctEffDt"
+            },
+            {
+              "name": "cancelDate",
+              "type": "string",
+              "doc": "from CDB fa.fincAcctCancDt"
+            },
+            {
+              "name": "policyNumber",
+              "type": "string",
+              "doc": "from CDB fa.fincPolNbr"
+            },
+            {
+              "name": "policySuffixCode",
+              "type": "string",
+              "doc": "from CDB fa.fincPolSufxCd"
+            },
+            {
+              "name": "financialAccountStatusCode",
+              "type": "string",
+              "doc": "from CDB fa.fincAcctStsCd"
+            },
+            {
+              "name": "coverageLevel",
+              "type": "string",
+              "doc": "from CDB fa.covLvlTypCd"
+            },
+            {
+              "name": "medicalPolicyNumber",
+              "type": "string",
+              "doc": "from CDB fa.lgcyPolNbr"
+            },
+            {
+              "name": "medicalPolicySuffixCode",
+              "type": "string",
+              "doc": "from CDB fa.medPolSufxCd"
+            },
+            {
+              "name": "sharedArrangement",
+              "type": "string",
+              "doc": "from CDB fa.shrArngCd"
+            },
+            {
+              "name": "obligorId",
+              "type": "string",
+              "doc": "from CDB fa.shrArngObligCd"
+            },
+            {
+              "name": "medicalProductTypeCode",
+              "type": "string",
+              "doc": "from CDB fa.lgcyPrdtTypCd"
+            },
+            {
+              "name": "eligibilityStatusCode",
+              "type": "string",
+              "doc": "from CDB fa.eeStsTypCd"
+            },
+            {
+              "name": "iPlanIndicator",
+              "type": "string",
+              "doc": "from CDB fa.prdtSrvcTypCd"
+            }
+          ]
+        }
+      },
+      "doc": "Financial Accounts"
+    },
+    {
+      "name": "customerDefined",
+      "type": {
+        "type": "array",
+        "items":   {
+          "namespace": "com.optum.exts.eligibility.rally.model",
+          "name": "CustomerDefined",
+          "type": "record",
+          "fields": [
+            {
+              "name": "policyNumber",
+              "type": "string",
+              "doc": "from CDB cdf.lgcyPolNbr"
+            },
+            {
+              "name": "customerDefinedTypeCode",
+              "type": "string",
+              "doc": "from CDB cdf.custDefnFldTypCd"
+            },
+            {
+              "name": "customerDefinedText",
+              "type": "string",
+              "doc": "from CDB cdf.custDefnFldTxt"
+            }
+          ]
+        }
+      },
+      "doc": "Customer-Defined Fields"
+    },
+    {
+      "name": "coverageCustomDefined",
+      "type": {
+        "type": "array",
+        "items":   {
+          "namespace": "com.optum.exts.eligibility.rally.model",
+          "name": "CoverageCustomDefined",
+          "type": "record",
+          "fields": [
+            {
+              "name": "policyNumber",
+              "type": "string",
+              "doc": "from CDB ccdf.lgcyPolNbr"
+            },
+            {
+              "name": "coverageType",
+              "type": "string",
+              "doc": "from CDB ccdf.covTypCd"
+            },
+            {
+              "name": "effectiveDate",
+              "type": "string",
+              "doc": "from CDB ccdf.covEffDt"
+            },
+            {
+              "name": "cancelDate",
+              "type": "string",
+              "doc": "from CDB ccdf.covCancDt"
+            },
+            {
+              "name": "coverageCustomDefinedTypeCode",
+              "type": "string",
+              "doc": "from CDB ccdf.covCustDefnFldCd"
+            },
+            {
+              "name": "coverageCustomDefinedText",
+              "type": "string",
+              "doc": "from CDB ccdf.covCustDefnFldTxt"
+            }
+          ]
+        }
+      },
+      "doc": "Customer-Defined Coverage Fields"
+    },
+    {
+      "name": "memberPopulation",
+      "type": {
+        "type": "array",
+        "items":   {
+          "namespace": "com.optum.exts.eligibility.rally.model",
+          "name": "MemberPopulation",
+          "type": "record",
+          "fields": [
+            {
+              "name": "coverageType",
+              "type": "string",
+              "doc": "from CDB mp.covTypCd"
+            },
+            {
+              "name": "populationCancelDate",
+              "type": "string",
+              "doc": "from CDB mp.mbrPopIdCancDt"
+            },
+            {
+              "name": "populationDateAssigned",
+              "type": "string",
+              "doc": "from CDB mp.mbrPopulationAsgnDt"
+            },
+            {
+              "name": "populationEffectiveDate",
+              "type": "string",
+              "doc": "from CDB mp.mbrPopIdEffDt"
+            },
+            {
+              "name": "populationId",
+              "type": "string",
+              "doc": "from CDB mp.mbrPopulationId"
+            },
+            {
+              "name": "populationRuleFired",
+              "type": "string",
+              "doc": "from CDB mp.ruleFired"
+            },
+            {
+              "name": "populationTimeStamp",
+              "type": "string",
+              "doc": "from CDB mp.rowTmstmp"
+            }
+          ]
+        }
+      },
+      "doc": "Member Populations"
+    },
+    {
+        "name": "sourceLastUpdatedTimestamp",
+        "type": [
+            "null",
+            {
+                "type": "string",
+                "avro.java.string": "String",
+                "logicalType": "TIMESTAMP"
+            }
+        ],
+        "default": null
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+# Routes
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An Kafka read controller to get the latest offset read so far
+GET          /offset                       com.rallyhealth.dataship.reader.controllers.KafkaReaderController.getOffset
+#Health Check endpoint
+->          /rest/ops                    opsStatic.Routes

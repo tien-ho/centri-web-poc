@@ -1,0 +1,16 @@
+{
+  "templateVersion": 1,
+  "serviceName": "dataship",
+  "rootServicePath": "dataship",
+  "paths": {
+    "dataship.play.secret": {},
+    "dataship.secure.logging.encryptkey": {},
+    "dataship.secure.logging.initvector": {},
+    "dataship.kafka.ssl.keystore.password": {},
+    "dataship.kafka.ssl.truststore.password": {},
+    "dataship.kafka.ssl.key.password": {},
+    "dataship.encrypt.database.key.service": {},
+    "dataship.hash.key.service": {},
+    "dataship.postgres.db.password": {}
+  }
+}

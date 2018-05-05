@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- https://www.playframework.com/documentation/latest/SettingsLogger -->
+<configuration>
+
+  <property name="PRODUCT_NAME" value="core" />
+  <property name="APP_NAME" value="dataship" />
+
+  <conversionRule conversionWord="coloredLevel" converterClass="play.api.libs.logback.ColoredLevel" />
+
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>${application.home:-.}/logs/application.log</file>
+    <encoder>
+      <pattern>%date [%level] from %logger in %thread - %message%n%xException</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <!-- Exception output is limited in the console output because Scala creates very deep stack traces. The
+      value was chosen because it keeps a few lines of Scala. -->
+      <!-- The key/value pairs 'product', 'service', and 'env' are introduced for Splunk integration. -->
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{15}: %msg [%mdc] %n%rEx{24}</pattern>
+      <immediateFlush>true</immediateFlush>
+    </encoder>
+  </appender>
+
+  <appender name="ASYNCFILE" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="FILE" />
+  </appender>
+
+  <appender name="ASYNCSTDOUT" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="STDOUT" />
+  </appender>
+
+  <!-- Off these ones as they are annoying, and anyway we manage configuration ourselves -->
+  <logger name="com.avaje.ebean.config.PropertyMapLoader" level="OFF" />
+  <logger name="com.avaje.ebeaninternal.server.core.XmlConfigLoader" level="OFF" />
+  <logger name="com.avaje.ebeaninternal.server.lib.BackgroundThread" level="OFF" />
+  <logger name="com.gargoylesoftware.htmlunit.javascript" level="OFF" />
+  <logger name="org.apache.kafka.clients.consumer.internals.Fetcher" level="OFF" />
+  <logger name="org.apache.kafka.clients.consumer.internals" level="OFF" />
+
+  <!-- Root level will include third-party code, so we only want to see warnings or worse -->
+  <root level="${ROOT_LOGBACK_LEVEL:-info}">
+    <appender-ref ref="ASYNCSTDOUT" />
+  </root>
+
+</configuration>

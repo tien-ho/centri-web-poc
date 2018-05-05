@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: com.miguno.akka:akka-mock-scheduler_2.11:0.5.1:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.miguno.akka/akka-mock-scheduler_2.11/jars/akka-mock-scheduler_2.11-0.5.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.miguno.akka/akka-mock-scheduler_2.11/srcs/akka-mock-scheduler_2.11-0.5.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
